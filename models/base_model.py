@@ -21,9 +21,10 @@ class BaseModel:
         self.updated_at = datetime.today()
         if len(kwargs) != 0:
             for k, v in kwargs.items():
-                self.__dict__[k] = datetime.strptime(v, tform)
-            else:
-                self.__dict__[k] = v
+                if k == "created_at" or k == "updated_at":
+                    self.__dict__[k] = datetime.strptime(v, tform)
+                else:
+                    self.__dict__[k] = v
         else:
             models.storage.new(self)
 
@@ -48,3 +49,4 @@ class BaseModel:
         """Return the print/str representation of the BaseModel instance."""
         clname = self.__class__.__name__
         return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
+
