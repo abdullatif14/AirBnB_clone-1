@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-
-""" Creating a base model"""
-
+"""Defines the BaseModel class."""
+import models
 from uuid import uuid4
 from datetime import datetime
-import models
 
 
 class BaseModel:
-    def __init__(self, *args, **kwargs):
-        """
-        The class serces as the base class for other classes to
-        inherit from.
-        *args and **kwargs are used as constructors of the BaseModel
+    """Represents the BaseModel of the HBnB project."""
 
+    def __init__(self, *args, **kwargs):
+        """Initialize a new BaseModel.
+
+        Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
         """
         tform = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
@@ -21,16 +21,15 @@ class BaseModel:
         self.updated_at = datetime.today()
         if len(kwargs) != 0:
             for k, v in kwargs.items():
-                if k == "created_at" or k == "updated_at":
-                    self.__dict__[k] = datetime.strptime(v, tform)
-                else:
-                    self.__dict__[k] = v
-
+                self.__dict__[k] = datetime.strptime(v, tform)
+            else:
+                self.__dict__[k] = v
         else:
             models.storage.new(self)
 
     def save(self):
-        self.updated_at = datetime.now()
+        """Update updated_at with the current datetime."""
+        self.updated_at = datetime.today()
         models.storage.save()
 
     def to_dict(self):
@@ -49,4 +48,3 @@ class BaseModel:
         """Return the print/str representation of the BaseModel instance."""
         clname = self.__class__.__name__
         return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
-        
