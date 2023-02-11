@@ -27,7 +27,6 @@ class BaseModel:
                     self.__dict__[k] = v
 
         else:
-
             models.storage.new(self)
 
     def save(self):
