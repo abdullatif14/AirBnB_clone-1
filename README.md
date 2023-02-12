@@ -44,5 +44,5 @@ Updates a class instance based on a given id with a given key/value attribute pa
 Unittests for the HolbertonBnB project are defined in the tests folder.
 
 ## Authors
-Fred Agullo @<MaxxyFred304>
-Abdilatif Mohamed @<abdullatif14> 
+Fred Agullo <MaxxyFred304>
+Abdilatif Mohamed <abdullatif14> 
