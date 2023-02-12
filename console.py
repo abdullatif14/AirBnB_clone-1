@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
+
 '''defines the console'''
 import cmd
 import re
@@ -258,8 +258,7 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-=======
-"""Defines the HBnB console."""
+    """Defines the HBnB console."""
 import cmd
 import re
 from shlex import split
@@ -467,5 +466,5 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
->>>>>>> 67c657d56cc36fd35350c30718bfc0b659b79d0d
+    67657563635350307180659790
     HBNBCommand().cmdloop()
