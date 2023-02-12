@@ -45,4 +45,4 @@ Unittests for the HolbertonBnB project are defined in the tests folder.
 
 ## Authors
 Fred Agullo <MaxxyFred304>
-Abdilatif Mohamed <Abdullatif14> 
+Abdilatif Mohamed <abdullatif14> 
